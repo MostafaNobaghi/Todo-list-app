@@ -1,6 +1,6 @@
 var todolist = document.getElementById('todo');
 
-// the list date and item, saving in the following Object to save in local storage
+// the list data and item, saving in the following Object to save in local storage
 var data =(localStorage.getItem('todolist'))?JSON.parse(localStorage.getItem('todolist')): {
     todo: [],
     completed: []
