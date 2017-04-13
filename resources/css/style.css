@@ -1,0 +1,200 @@
+@charset "utf-8";
+body {
+    background: #edf0f1;
+    padding-top: 80px;
+}
+body, input, button {
+    font-family: "roboto", sans-serif;
+}
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    background: #25b99a;
+    box-shadow: 0px 2px 5px rgba(44,62,80,0.2);
+    border-radius: 0 0 10px 10px;
+}
+
+header input {
+    width: 100%;
+    height: 50px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    float: left;
+    text-indent: 18px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 0px;
+    padding-right: 60px;
+    border-radius: 5px 25px 25px 5px;
+    /*box-shadow: none;
+    outline: none;*/
+}
+header input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.65);
+}
+header input:-moz-placeholder { /* Firefox 18- */
+    color: rgba(255,255,255,0.75);
+}
+header input::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(255,255,255,0.75);
+}
+header input:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(255,255,255,0.75);
+}
+
+header button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: #fff;
+    cursor: pointer;
+}
+header button svg {
+    height: 16px;
+    width: 16px;
+}
+header button svg .fill {
+    fill: #25b99a;
+}
+.container {
+    padding: 15px;
+}
+ul.todo {
+    width: 100%;
+}
+ul.todo li {
+    width: 100%;
+    min-height: 50px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(44,62,80,0.1);
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    line-height: 22px;
+    padding: 14px 100px 14px 14px;
+}
+ul.todo li:last-of-type {
+    margin: 0;
+}
+
+ul.todo li .buttons {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 100px;
+}
+ul.todo li .buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0px;
+    border: 0px;
+    position: relative; 
+    float: left;
+    background: none;
+    cursor: pointer;
+}
+ul.todo li .buttons button:last-of-type:before {
+    content: '';
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background: #ede0f1;
+}
+
+ul.todo li .buttons button svg {
+    width: 22px;
+    height: 22px;
+    transition: 0.2s ease;
+}
+
+ul.todo li .buttons button svg .fill{
+    -webkit-transition: 0.3s ease all;
+    -o-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+}
+
+ul.todo li .buttons button.remove svg .fill {
+    fill: #c0cecb;
+}
+
+ul.todo li .buttons button.remove:hover svg .fill {
+    fill: #e85656;
+}
+
+ul.todo li button.complete svg {
+    border:1.5px solid #25b99a;
+    border-radius: 50%;
+}
+
+ul.todo:not(#completed) li button.complete svg .fill {
+    fill: #25b99a;
+}
+
+ul.todo:not(#completed) li button.complete:hover svg  {
+    background: rgba(37, 185, 154, 0.8);
+}
+
+ul.todo:not(#completed) li button.complete:hover svg .fill  {
+    fill: #fff;
+}
+
+ul.todo#completed li .buttons button.complete svg {
+    background: #25b99a;
+    fill: #fff;
+}
+
+ul.todo#completed li .buttons button.complete:hover svg {
+    background: rgba(37, 185, 154, 0.7);
+}
+
+ul.todo li button.complete svg .nofill {
+    fill: none;
+}
+ul.todo#completed{
+    position: relative;
+    padding-top: 60px;
+}
+ul.todo#completed:before {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #c8d5d0;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    margin: 0 0 0 -75px;
+}
+
+ul.todo#todo:empty:after {
+    content: 'You have nothing to-do!!!';
+    text-align: center;
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 15px;
+}
+ul.todo#completed:empty::after {
+    content: 'You didnt complete any task yet:!!!';
+    text-align: center;
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 15px;
+}
